@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Car from './componentes/Car';
 
 function App() {
   return (
     <div className="App">
-  
-      <h1>Tareas Pendientes de Hedy Lamarr</h1>
-      <img
-        src="https://i.imgur.com/yXOvdOSs.jpg"
-        alt="Hedy Lamarr"
-        className="photo"
-      />
-      <ul>
-        <li>Inventar nuevo semáforo</li>
-        <li>Ensayar la escena de la película</li>
-        <li>Mejorar la tecnología del espectro</li>
-      </ul>
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Hola Mundo React
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
 
 
+        <Car />
+      </header>
     </div>
   );
 }
