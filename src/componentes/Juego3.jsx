@@ -111,11 +111,11 @@ const ReiniciarJuego = () => {
     const convierteEmoji = (opcion) => {
         switch (opcion) {
             case 'PIEDRA':
-                return '🪨';
+                return 'Eligio 🪨';
             case 'PAPEL':
-                return '✋🏻';
+                return 'Eligio ✋🏻';
             case 'TIJERA':
-                return '✌️';
+                return 'Eligio ✌️';
             default:
                 return '';
         }
@@ -139,11 +139,9 @@ const ReiniciarJuego = () => {
                 <span>-</span>
                 <span id="puntosComputadora">{puntajeComputadora}</span>
                 </div>
-                {/* <p className="marcadorPc"> Computadora: {puntajeComputadora}</p>
-                <p className="marcadorUsuario">  Player :  {puntajeJugador}</p> */}
             </div>
           
-          <div className="BtnSeleccion">
+          <div className="opciones">
             {opciones.map((item) => (
             <Button className= "choice" value={item} onClick={eleccionUsuario}>{item}</Button>        
             ))}

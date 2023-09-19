@@ -41,6 +41,15 @@ body{
     font-size: 1.6rem;
 }
 
+.opciones{
+    text-align: center;
+    margin: 10px 0px;
+    color: #21618C;
+    padding: 10px;
+    font-family:  'Gluten', cursive;
+
+}
+
 .choice{
     display: inline-block;
     border: 4px solid #fff;
