@@ -1,0 +1,59 @@
+body{
+    background-color: #283747 ; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:  'Gluten', cursive;
+}
+.marcador {
+    background-color: #21618C;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: #FFF;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    border: 3px solid #fff;
+    
+} 
+
+.marcador .etiqueta{
+    position: absolute;
+    color: #FFF;
+    background-color: #21618C;
+    line-height: 1;
+    padding: .5rem;
+    border-radius: .5rem;
+    border: 2px solid #FFF;
+}
+
+.marcador .etiquetaJugador {
+    right: 85%;
+}
+
+.marcador .etiquetaComputadora{
+    left: 85%;
+}
+
+.marcador .puntos {
+    font-size: 1.6rem;
+}
+
+.choice{
+    display: inline-block;
+    border: 4px solid #fff;
+    border-radius: 20%;
+    background: #fff;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.3s ease;
+}
+
+.choice:hover{
+    background: #21618C;
+    cursor: pointer;
+    animation: shake 1s ;
+    color: #FFF;
+}

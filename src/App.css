@@ -1,8 +1,12 @@
 .App {
   text-align: center;
+  /* background-color: #283747 ;  */
+  color: #fff;
+  font-family:  'Gluten', cursive;
 }
 
-.App-logo {
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
