@@ -5,6 +5,8 @@ import "./Juego.css"
 import papel2 from "./Imagenes/papel2.png"
 import piedra2 from "./Imagenes/piedra2.png"
 import tijera2 from "./Imagenes/tijera2.png"
+import Swal from "sweetalert2";
+import { useEffect} from 'react';
 
 
 const H2 = styled.h1`
@@ -13,7 +15,7 @@ font-family:  'Gluten', cursive;
 `
 const Button = styled.button`
     text-align: center;
-    margin: 10px 0px;
+    margin: 8px;
     color: #21618C;
     padding: 10px;
     font-family:  'Gluten', cursive;
@@ -52,7 +54,7 @@ function Juego3(){
     const [puntajeJugador, setPuntajeJugador] = useState(0); 
     const [resultado, setRestultado] = useState();
     const [mostrarResultado, setMostrarResultado] = useState(false);
-    // const [reiniciarJuego, setReiniciarJuego] = useState(false);
+    const [nombreUsuario, setNombreUsuario] = useState();
 
     const opciones = ['PIEDRA','PAPEL','TIJERA'];
     // const Images = {
@@ -67,7 +69,62 @@ function Juego3(){
         eleccionComputadora();
     }
 
-    NombreUsuario();
+    useEffect(() => {
+      mostrarAlerta()
+    
+      return () => {
+        
+      }
+    }, [])
+    
+
+      const mostrarAlerta = () => {
+        Swal.fire({      
+          text: 'Escribe tu nombre',
+          input: 'text',
+          padding: 50,
+          width: 550,
+          color: '#000000',
+          inputPlaceholder:'Ingresa tu nombre aqui',      
+          confirmButtonText: 'Guardar',
+          confirmButtonColor: '#21618C',      
+          imageUrl:'https://static.vecteezy.com/system/resources/thumbnails/003/027/817/small/rock-paper-scissors-hand-gesture-free-vector.jpg',
+          imageHeight: 100,
+          imageWidth: 250,
+          title: 'BIENVENIDO/A',
+            showClass: {
+                popup: 'animate__animated animate__swing'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__bounceOutDown'
+            }
+          
+                
+        })
+        .then(resultado => {
+          if (resultado.value) {
+              setNombreUsuario(resultado.value);
+              Swal.fire({
+                width: 550,
+                padding: '3em',  
+                imageUrl:'https://static.vecteezy.com/system/resources/thumbnails/003/027/817/small/rock-paper-scissors-hand-gesture-free-vector.jpg',
+                imageHeight: 100,
+                imageWidth: 250,
+                color: '#000000',
+                confirmButtonColor: '#21618C',
+                text:'Esto es: Piedra, Papel o Tijeras con REACT',
+                title: 'Hola ' + resultado.value + '.' ,
+                footer:'<span>Mucha suerte!</span>',            
+                showClass: {
+                    popup: 'animate__animated animate__rubberBand',
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__backOutRight'
+                }
+            });
+          }
+      });
+      }
    
 function Jugar() {
 
@@ -132,7 +189,7 @@ const ReiniciarJuego = () => {
         <br />
                 
             <div className="marcador">
-                <div class="etiqueta etiquetaJugador">USUARIO</div>            
+                <div class="etiqueta etiquetaJugador">{nombreUsuario}</div>            
                 <div class="etiqueta etiquetaComputadora">COMPUTADORA</div>       
                 <div class="puntos">
                 <span id="puntosJugador">{puntajeJugador}</span> 
@@ -159,7 +216,7 @@ const ReiniciarJuego = () => {
                         Computadora {convierteEmoji(computadoraSeleccion)}
                     </div>
                     <div className="seleccionUsuario">
-                        {convierteEmoji(jugadorSeleccion)} Jugador
+                        {nombreUsuario} {convierteEmoji(jugadorSeleccion)}
                     </div>
 
                 </div>
